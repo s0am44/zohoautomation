@@ -1,0 +1,1889 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.10.6 on win32)" generated="20250212 16:08:22.332" rpa="false" schemaversion="4">
+<suite id="s1" name="Zoho TestAutomation" source="E:\Automation\Zoho_TestAutomation">
+<suite id="s1-s1" name="Testcases" source="E:\Automation\Zoho_TestAutomation\Testcases">
+<suite id="s1-s1-s1" name="Createlead" source="E:\Automation\Zoho_TestAutomation\Testcases\createlead.robot">
+<test id="s1-s1-s1-t1" name="Verify Adding a New Lead in Zoho CRM" line="12">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Zoho CRM</arg>
+<arg>AND</arg>
+<arg>Login to Zoho CRM</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>AND</arg>
+<arg>Navigate to Create Leads Section</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Zoho CRM" library="common">
+<doc>Open Zoho CRM in the browser and wait for the login page to load</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${zohourl}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250212 16:08:22.931" level="INFO">Opening browser 'Chrome' to base url 'https://accounts.zoho.in/signin?servicename=ZohoHome&amp;signupurl=https://www.zoho.com/signup.html'.</msg>
+<status status="PASS" starttime="20250212 16:08:22.930" endtime="20250212 16:08:26.188"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250212 16:08:26.188" endtime="20250212 16:08:26.239"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${signin_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signin_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:08:26.242" level="INFO">Clicking element '//div[@class='signin_head']//span[@id='headtitle' and text()='Sign in']'.</msg>
+<msg timestamp="20250212 16:08:26.469" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:08:26.470" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6C01202F5+28725]
+	(No symbol) [0x00007FF6C0082AE0]
+	(No symbol) [0x00007FF6BFF14F39]
+	(No symbol) [0x00007FF6BFF6A7D4]
+	(No symbol) [0x00007FF6BFF5C6B4]
+	(No symbol) [0x00007FF6BFF8FFAA]
+	(No symbol) [0x00007FF6BFF5BF86]
+	(No symbol) [0x00007FF6BFF901C0]
+	(No symbol) [0x00007FF6BFFB0181]
+	(No symbol) [0x00007FF6BFF8FD53]
+	(No symbol) [0x00007FF6BFF5A0E3]
+	(No symbol) [0x00007FF6BFF5B471]
+	GetHandleVerifier [0x00007FF6C044F30D+3366989]
+	GetHandleVerifier [0x00007FF6C04612F0+3440688]
+	GetHandleVerifier [0x00007FF6C04578FD+3401277]
+	GetHandleVerifier [0x00007FF6C01EAAAB+858091]
+	(No symbol) [0x00007FF6C008E74F]
+	(No symbol) [0x00007FF6C008A304]
+	(No symbol) [0x00007FF6C008A49D]
+	(No symbol) [0x00007FF6C0078B69]
+	BaseThreadInitThunk [0x00007FFA06F97374+20]
+	RtlUserThreadStart [0x00007FFA08B3CC91+33]
+</msg>
+<status status="FAIL" starttime="20250212 16:08:26.240" endtime="20250212 16:08:26.486"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signin_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:08:41.496" level="INFO">Clicking element '//div[@class='signin_head']//span[@id='headtitle' and text()='Sign in']'.</msg>
+<status status="PASS" starttime="20250212 16:08:41.492" endtime="20250212 16:08:41.591"/>
+</kw>
+<status status="PASS" starttime="20250212 16:08:26.239" endtime="20250212 16:08:41.591"/>
+</kw>
+<status status="PASS" starttime="20250212 16:08:22.929" endtime="20250212 16:08:41.591"/>
+</kw>
+<kw name="Login to Zoho CRM" library="common">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Login to Zoho CRM with the given username and password</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${googlesign_loc}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250212 16:08:41.592" endtime="20250212 16:08:41.621"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_loc}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:08:41.622" level="INFO">Typing text 'zohotest1102@gmail.com' into text field '//input[@id='login_id']'.</msg>
+<status status="PASS" starttime="20250212 16:08:41.621" endtime="20250212 16:08:41.971"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nextbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:08:41.972" level="INFO">Clicking element '//button[@id='nextbtn']'.</msg>
+<status status="PASS" starttime="20250212 16:08:41.971" endtime="20250212 16:08:42.157"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password_loc}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:08:42.158" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg timestamp="20250212 16:08:42.256" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20250212 16:08:42.381" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20250212 16:08:42.157" endtime="20250212 16:08:42.381"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nextbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:08:42.382" level="INFO">Clicking element '//button[@id='nextbtn']'.</msg>
+<status status="PASS" starttime="20250212 16:08:42.381" endtime="20250212 16:08:42.496"/>
+</kw>
+<status status="PASS" starttime="20250212 16:08:41.592" endtime="20250212 16:08:42.496"/>
+</kw>
+<kw name="Navigate to Create Leads Section" library="common">
+<doc>Navigate to the create leads section and wait for the page to load</doc>
+<kw name="Navigate to leads section" library="common">
+<doc>Navigate to the leads section and wait for the page to load</doc>
+<kw name="Get Current Date" library="DateTime">
+<var>${Date}</var>
+<arg>result_format=%Y%m%d%H%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20250212 16:08:42.498" level="INFO">${Date} = 202502121608</msg>
+<status status="PASS" starttime="20250212 16:08:42.498" endtime="20250212 16:08:42.498"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${Date}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250212 16:08:42.499" level="INFO">${Date} = 202502121608</msg>
+<status status="PASS" starttime="20250212 16:08:42.498" endtime="20250212 16:08:42.499"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${crmsec_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${crmsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:08:42.500" level="INFO">Clicking element '//div[text()='CRM']'.</msg>
+<msg timestamp="20250212 16:08:43.532" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:08:43.532" level="FAIL">Element with locator '//div[text()='CRM']' not found.</msg>
+<status status="FAIL" starttime="20250212 16:08:42.499" endtime="20250212 16:08:43.536"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${crmsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:08:58.552" level="INFO">Clicking element '//div[text()='CRM']'.</msg>
+<status status="PASS" starttime="20250212 16:08:58.550" endtime="20250212 16:09:03.961"/>
+</kw>
+<status status="PASS" starttime="20250212 16:08:42.499" endtime="20250212 16:09:03.961"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${leads_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leads_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:09:03.963" level="INFO">Clicking element '//a//span[text()='Leads']'.</msg>
+<status status="PASS" starttime="20250212 16:09:03.962" endtime="20250212 16:09:04.428"/>
+</kw>
+<status status="PASS" starttime="20250212 16:09:03.962" endtime="20250212 16:09:04.428"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${totalrecrds_loc}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:09:04.429" endtime="20250212 16:09:07.654"/>
+</kw>
+<status status="PASS" starttime="20250212 16:08:42.497" endtime="20250212 16:09:07.654"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${totalrecrds_loc}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:09:07.654" endtime="20250212 16:09:07.782"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${createleadsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:09:07.783" level="INFO">Clicking element '//button[text()='Create Lead']'.</msg>
+<status status="PASS" starttime="20250212 16:09:07.782" endtime="20250212 16:09:07.940"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${leadflow_loc}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:09:07.940" endtime="20250212 16:09:09.725"/>
+</kw>
+<status status="PASS" starttime="20250212 16:08:42.497" endtime="20250212 16:09:09.726"/>
+</kw>
+<status status="PASS" starttime="20250212 16:08:22.929" endtime="20250212 16:09:09.726"/>
+</kw>
+<kw name="Add New Lead with only mandatory fields" library="lead">
+<doc>Add a new lead with only mandatory fields and save</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${companyname_loc}</arg>
+<arg>lead${Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:09:09.728" level="INFO">Typing text 'lead202502121608' into text field '//crm-create-fields[@id='Leads_fldRow_COMPANY']//input'.</msg>
+<status status="PASS" starttime="20250212 16:09:09.727" endtime="20250212 16:09:10.086"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${lastname_loc}</arg>
+<arg>${lastname}${Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:09:10.087" level="INFO">Typing text 'lastname202502121608' into text field '//input[@id='Crm_Leads_LASTNAME_LInput']'.</msg>
+<status status="PASS" starttime="20250212 16:09:10.086" endtime="20250212 16:09:10.531"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${saveleadbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:09:10.533" level="INFO">Clicking element '//button[@id='crm_create_savebutn']'.</msg>
+<status status="PASS" starttime="20250212 16:09:10.531" endtime="20250212 16:09:10.676"/>
+</kw>
+<status status="PASS" starttime="20250212 16:09:09.726" endtime="20250212 16:09:10.676"/>
+</kw>
+<kw name="Verify Lead is Added" library="lead">
+<doc>Verify if the lead is added successfully</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//span[contains(text(),'${lastname}${Date}')]</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250212 16:09:10.678" endtime="20250212 16:09:12.805"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Lead ${lastname}${Date} successfully added to Zoho CRM</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250212 16:09:12.805" level="INFO">Lead lastname202502121608 successfully added to Zoho CRM</msg>
+<status status="PASS" starttime="20250212 16:09:12.805" endtime="20250212 16:09:12.805"/>
+</kw>
+<status status="PASS" starttime="20250212 16:09:10.677" endtime="20250212 16:09:12.805"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20250212 16:09:12.806" endtime="20250212 16:09:19.745"/>
+</kw>
+<doc>Verify if a new lead can be added in Zoho CRM</doc>
+<tag>createlead_tc01</tag>
+<status status="PASS" starttime="20250212 16:08:22.928" endtime="20250212 16:09:19.746"/>
+</test>
+<test id="s1-s1-s1-t2" name="Verify User Cannot Add Record if Mandatory Fields Are Left Blank" line="19">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Zoho CRM</arg>
+<arg>AND</arg>
+<arg>Login to Zoho CRM</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>AND</arg>
+<arg>Navigate to Create Leads Section</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Zoho CRM" library="common">
+<doc>Open Zoho CRM in the browser and wait for the login page to load</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${zohourl}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250212 16:09:19.760" level="INFO">Opening browser 'Chrome' to base url 'https://accounts.zoho.in/signin?servicename=ZohoHome&amp;signupurl=https://www.zoho.com/signup.html'.</msg>
+<status status="PASS" starttime="20250212 16:09:19.757" endtime="20250212 16:09:22.795"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250212 16:09:22.795" endtime="20250212 16:09:22.818"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${signin_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signin_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:09:22.820" level="INFO">Clicking element '//div[@class='signin_head']//span[@id='headtitle' and text()='Sign in']'.</msg>
+<msg timestamp="20250212 16:09:23.055" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:09:23.055" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6C01202F5+28725]
+	(No symbol) [0x00007FF6C0082AE0]
+	(No symbol) [0x00007FF6BFF14F39]
+	(No symbol) [0x00007FF6BFF6A7D4]
+	(No symbol) [0x00007FF6BFF5C6B4]
+	(No symbol) [0x00007FF6BFF8FFAA]
+	(No symbol) [0x00007FF6BFF5BF86]
+	(No symbol) [0x00007FF6BFF901C0]
+	(No symbol) [0x00007FF6BFFB0181]
+	(No symbol) [0x00007FF6BFF8FD53]
+	(No symbol) [0x00007FF6BFF5A0E3]
+	(No symbol) [0x00007FF6BFF5B471]
+	GetHandleVerifier [0x00007FF6C044F30D+3366989]
+	GetHandleVerifier [0x00007FF6C04612F0+3440688]
+	GetHandleVerifier [0x00007FF6C04578FD+3401277]
+	GetHandleVerifier [0x00007FF6C01EAAAB+858091]
+	(No symbol) [0x00007FF6C008E74F]
+	(No symbol) [0x00007FF6C008A304]
+	(No symbol) [0x00007FF6C008A49D]
+	(No symbol) [0x00007FF6C0078B69]
+	BaseThreadInitThunk [0x00007FFA06F97374+20]
+	RtlUserThreadStart [0x00007FFA08B3CC91+33]
+</msg>
+<status status="FAIL" starttime="20250212 16:09:22.819" endtime="20250212 16:09:23.057"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signin_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:09:38.067" level="INFO">Clicking element '//div[@class='signin_head']//span[@id='headtitle' and text()='Sign in']'.</msg>
+<status status="PASS" starttime="20250212 16:09:38.066" endtime="20250212 16:09:38.127"/>
+</kw>
+<status status="PASS" starttime="20250212 16:09:22.818" endtime="20250212 16:09:38.128"/>
+</kw>
+<status status="PASS" starttime="20250212 16:09:19.755" endtime="20250212 16:09:38.128"/>
+</kw>
+<kw name="Login to Zoho CRM" library="common">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Login to Zoho CRM with the given username and password</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${googlesign_loc}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250212 16:09:38.128" endtime="20250212 16:09:38.143"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_loc}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:09:38.144" level="INFO">Typing text 'zohotest1102@gmail.com' into text field '//input[@id='login_id']'.</msg>
+<status status="PASS" starttime="20250212 16:09:38.143" endtime="20250212 16:09:38.350"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nextbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:09:38.351" level="INFO">Clicking element '//button[@id='nextbtn']'.</msg>
+<status status="PASS" starttime="20250212 16:09:38.351" endtime="20250212 16:09:38.495"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password_loc}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:09:38.496" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg timestamp="20250212 16:09:38.593" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20250212 16:09:38.641" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20250212 16:09:38.495" endtime="20250212 16:09:38.641"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nextbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:09:38.642" level="INFO">Clicking element '//button[@id='nextbtn']'.</msg>
+<status status="PASS" starttime="20250212 16:09:38.641" endtime="20250212 16:09:38.784"/>
+</kw>
+<status status="PASS" starttime="20250212 16:09:38.128" endtime="20250212 16:09:38.784"/>
+</kw>
+<kw name="Navigate to Create Leads Section" library="common">
+<doc>Navigate to the create leads section and wait for the page to load</doc>
+<kw name="Navigate to leads section" library="common">
+<doc>Navigate to the leads section and wait for the page to load</doc>
+<kw name="Get Current Date" library="DateTime">
+<var>${Date}</var>
+<arg>result_format=%Y%m%d%H%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20250212 16:09:38.785" level="INFO">${Date} = 202502121609</msg>
+<status status="PASS" starttime="20250212 16:09:38.785" endtime="20250212 16:09:38.785"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${Date}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250212 16:09:38.786" level="INFO">${Date} = 202502121609</msg>
+<status status="PASS" starttime="20250212 16:09:38.785" endtime="20250212 16:09:38.786"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${crmsec_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${crmsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:09:38.787" level="INFO">Clicking element '//div[text()='CRM']'.</msg>
+<msg timestamp="20250212 16:09:39.631" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:09:39.631" level="FAIL">Element with locator '//div[text()='CRM']' not found.</msg>
+<status status="FAIL" starttime="20250212 16:09:38.786" endtime="20250212 16:09:39.632"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${crmsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:09:54.639" level="INFO">Clicking element '//div[text()='CRM']'.</msg>
+<status status="PASS" starttime="20250212 16:09:54.637" endtime="20250212 16:09:56.292"/>
+</kw>
+<status status="PASS" starttime="20250212 16:09:38.786" endtime="20250212 16:09:56.293"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${leads_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leads_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:09:56.294" level="INFO">Clicking element '//a//span[text()='Leads']'.</msg>
+<msg timestamp="20250212 16:09:56.934" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:09:56.934" level="FAIL">Element with locator '//a//span[text()='Leads']' not found.</msg>
+<status status="FAIL" starttime="20250212 16:09:56.293" endtime="20250212 16:09:56.935"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leads_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:10:11.938" level="INFO">Clicking element '//a//span[text()='Leads']'.</msg>
+<status status="PASS" starttime="20250212 16:10:11.936" endtime="20250212 16:10:12.134"/>
+</kw>
+<status status="PASS" starttime="20250212 16:09:56.293" endtime="20250212 16:10:12.134"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${totalrecrds_loc}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:10:12.135" endtime="20250212 16:10:14.315"/>
+</kw>
+<status status="PASS" starttime="20250212 16:09:38.784" endtime="20250212 16:10:14.316"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${totalrecrds_loc}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:10:14.316" endtime="20250212 16:10:14.417"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${createleadsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:10:14.418" level="INFO">Clicking element '//button[text()='Create Lead']'.</msg>
+<status status="PASS" starttime="20250212 16:10:14.417" endtime="20250212 16:10:14.673"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${leadflow_loc}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:10:14.673" endtime="20250212 16:10:16.114"/>
+</kw>
+<status status="PASS" starttime="20250212 16:09:38.784" endtime="20250212 16:10:16.114"/>
+</kw>
+<status status="PASS" starttime="20250212 16:09:19.754" endtime="20250212 16:10:16.114"/>
+</kw>
+<kw name="Leave all mandatory fields blank" library="lead">
+<doc>Leave all mandatory fields blank and save</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${title_loc}</arg>
+<arg>lead${Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:10:16.116" level="INFO">Typing text 'lead202502121609' into text field '//input[@id='Crm_Leads_DESIGNATION_LInput']'.</msg>
+<status status="PASS" starttime="20250212 16:10:16.115" endtime="20250212 16:10:16.396"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${saveleadbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:10:16.397" level="INFO">Clicking element '//button[@id='crm_create_savebutn']'.</msg>
+<status status="PASS" starttime="20250212 16:10:16.396" endtime="20250212 16:10:16.531"/>
+</kw>
+<status status="PASS" starttime="20250212 16:10:16.115" endtime="20250212 16:10:16.531"/>
+</kw>
+<kw name="Verify Lead is not added" library="lead">
+<doc>Verify if the lead is not added successfully</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${leaderrmsg_loc}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250212 16:10:16.532" endtime="20250212 16:10:16.598"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Lead ${lastname}${Date} was not added to Zoho CRM</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250212 16:10:16.598" level="INFO">Lead lastname202502121609 was not added to Zoho CRM</msg>
+<status status="PASS" starttime="20250212 16:10:16.598" endtime="20250212 16:10:16.598"/>
+</kw>
+<status status="PASS" starttime="20250212 16:10:16.532" endtime="20250212 16:10:16.599"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20250212 16:10:16.599" endtime="20250212 16:10:23.179"/>
+</kw>
+<doc>Verify if a new lead cannot be added in Zoho CRM if mandatory fields are left blank</doc>
+<tag>createlead_tc02</tag>
+<status status="PASS" starttime="20250212 16:09:19.752" endtime="20250212 16:10:23.181"/>
+</test>
+<status status="PASS" starttime="20250212 16:08:22.431" endtime="20250212 16:10:23.186"/>
+</suite>
+<suite id="s1-s1-s2" name="Deletelead" source="E:\Automation\Zoho_TestAutomation\Testcases\deletelead.robot">
+<test id="s1-s1-s2-t1" name="Verify user is able to delete existing lead" line="13">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Zoho CRM</arg>
+<arg>AND</arg>
+<arg>Login to Zoho CRM</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>AND</arg>
+<arg>Navigate to leads section</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Zoho CRM" library="common">
+<doc>Open Zoho CRM in the browser and wait for the login page to load</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${zohourl}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250212 16:10:23.256" level="INFO">Opening browser 'Chrome' to base url 'https://accounts.zoho.in/signin?servicename=ZohoHome&amp;signupurl=https://www.zoho.com/signup.html'.</msg>
+<status status="PASS" starttime="20250212 16:10:23.255" endtime="20250212 16:10:25.437"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250212 16:10:25.438" endtime="20250212 16:10:25.487"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${signin_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signin_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:10:25.489" level="INFO">Clicking element '//div[@class='signin_head']//span[@id='headtitle' and text()='Sign in']'.</msg>
+<msg timestamp="20250212 16:10:25.711" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:10:25.712" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6C01202F5+28725]
+	(No symbol) [0x00007FF6C0082AE0]
+	(No symbol) [0x00007FF6BFF14F39]
+	(No symbol) [0x00007FF6BFF6A7D4]
+	(No symbol) [0x00007FF6BFF5C6B4]
+	(No symbol) [0x00007FF6BFF8FFAA]
+	(No symbol) [0x00007FF6BFF5BF86]
+	(No symbol) [0x00007FF6BFF901C0]
+	(No symbol) [0x00007FF6BFFB0181]
+	(No symbol) [0x00007FF6BFF8FD53]
+	(No symbol) [0x00007FF6BFF5A0E3]
+	(No symbol) [0x00007FF6BFF5B471]
+	GetHandleVerifier [0x00007FF6C044F30D+3366989]
+	GetHandleVerifier [0x00007FF6C04612F0+3440688]
+	GetHandleVerifier [0x00007FF6C04578FD+3401277]
+	GetHandleVerifier [0x00007FF6C01EAAAB+858091]
+	(No symbol) [0x00007FF6C008E74F]
+	(No symbol) [0x00007FF6C008A304]
+	(No symbol) [0x00007FF6C008A49D]
+	(No symbol) [0x00007FF6C0078B69]
+	BaseThreadInitThunk [0x00007FFA06F97374+20]
+	RtlUserThreadStart [0x00007FFA08B3CC91+33]
+</msg>
+<status status="FAIL" starttime="20250212 16:10:25.488" endtime="20250212 16:10:25.713"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signin_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:10:40.726" level="INFO">Clicking element '//div[@class='signin_head']//span[@id='headtitle' and text()='Sign in']'.</msg>
+<status status="PASS" starttime="20250212 16:10:40.725" endtime="20250212 16:10:40.861"/>
+</kw>
+<status status="PASS" starttime="20250212 16:10:25.487" endtime="20250212 16:10:40.861"/>
+</kw>
+<status status="PASS" starttime="20250212 16:10:23.254" endtime="20250212 16:10:40.861"/>
+</kw>
+<kw name="Login to Zoho CRM" library="common">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Login to Zoho CRM with the given username and password</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${googlesign_loc}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250212 16:10:40.863" endtime="20250212 16:10:40.890"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_loc}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:10:40.892" level="INFO">Typing text 'zohotest1102@gmail.com' into text field '//input[@id='login_id']'.</msg>
+<status status="PASS" starttime="20250212 16:10:40.891" endtime="20250212 16:10:41.101"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nextbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:10:41.102" level="INFO">Clicking element '//button[@id='nextbtn']'.</msg>
+<status status="PASS" starttime="20250212 16:10:41.102" endtime="20250212 16:10:41.231"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password_loc}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:10:41.232" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg timestamp="20250212 16:10:41.317" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20250212 16:10:41.387" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20250212 16:10:41.231" endtime="20250212 16:10:41.387"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nextbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:10:41.388" level="INFO">Clicking element '//button[@id='nextbtn']'.</msg>
+<status status="PASS" starttime="20250212 16:10:41.387" endtime="20250212 16:10:41.488"/>
+</kw>
+<status status="PASS" starttime="20250212 16:10:40.862" endtime="20250212 16:10:41.488"/>
+</kw>
+<kw name="Navigate to leads section" library="common">
+<doc>Navigate to the leads section and wait for the page to load</doc>
+<kw name="Get Current Date" library="DateTime">
+<var>${Date}</var>
+<arg>result_format=%Y%m%d%H%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20250212 16:10:41.489" level="INFO">${Date} = 202502121610</msg>
+<status status="PASS" starttime="20250212 16:10:41.489" endtime="20250212 16:10:41.489"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${Date}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250212 16:10:41.490" level="INFO">${Date} = 202502121610</msg>
+<status status="PASS" starttime="20250212 16:10:41.489" endtime="20250212 16:10:41.490"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${crmsec_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${crmsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:10:41.491" level="INFO">Clicking element '//div[text()='CRM']'.</msg>
+<msg timestamp="20250212 16:10:41.671" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:10:41.671" level="FAIL">Element with locator '//div[text()='CRM']' not found.</msg>
+<status status="FAIL" starttime="20250212 16:10:41.490" endtime="20250212 16:10:41.672"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${crmsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:10:56.680" level="INFO">Clicking element '//div[text()='CRM']'.</msg>
+<status status="PASS" starttime="20250212 16:10:56.678" endtime="20250212 16:10:58.958"/>
+</kw>
+<status status="PASS" starttime="20250212 16:10:41.490" endtime="20250212 16:10:58.958"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${leads_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leads_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:10:58.959" level="INFO">Clicking element '//a//span[text()='Leads']'.</msg>
+<msg timestamp="20250212 16:10:59.096" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:10:59.096" level="FAIL">Element with locator '//a//span[text()='Leads']' not found.</msg>
+<status status="FAIL" starttime="20250212 16:10:58.958" endtime="20250212 16:10:59.096"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leads_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:11:14.110" level="INFO">Clicking element '//a//span[text()='Leads']'.</msg>
+<status status="PASS" starttime="20250212 16:11:14.108" endtime="20250212 16:11:14.470"/>
+</kw>
+<status status="PASS" starttime="20250212 16:10:58.958" endtime="20250212 16:11:14.470"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${totalrecrds_loc}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:11:14.471" endtime="20250212 16:11:17.092"/>
+</kw>
+<status status="PASS" starttime="20250212 16:10:41.488" endtime="20250212 16:11:17.093"/>
+</kw>
+<status status="PASS" starttime="20250212 16:10:23.254" endtime="20250212 16:11:17.093"/>
+</kw>
+<kw name="Verify if lead deletion" library="lead">
+<arg>${Accept}</arg>
+<doc>Verify if lead is deleted</doc>
+<kw name="Click on existing lead" library="lead">
+<doc>Click on an existing lead</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leadtable_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:11:17.095" level="INFO">Clicking element '//lyte-yield[@yield-name='body-lookup']//a'.</msg>
+<status status="PASS" starttime="20250212 16:11:17.095" endtime="20250212 16:11:17.347"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${leadedit_loc}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250212 16:11:17.347" endtime="20250212 16:11:19.950"/>
+</kw>
+<status status="PASS" starttime="20250212 16:11:17.094" endtime="20250212 16:11:19.951"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${leadname}</var>
+<arg>${existingleadnm_loc}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:11:19.989" level="INFO">${leadname} = lastname202502121608</msg>
+<status status="PASS" starttime="20250212 16:11:19.951" endtime="20250212 16:11:19.989"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${moreoptions_loc}</arg>
+<arg>timeout=15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:11:19.989" endtime="20250212 16:11:20.027"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${moreoptions_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:11:20.028" level="INFO">Clicking element '//button[@aria-label='More Options']'.</msg>
+<status status="PASS" starttime="20250212 16:11:20.027" endtime="20250212 16:11:20.300"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250212 16:11:25.301" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250212 16:11:20.301" endtime="20250212 16:11:25.301"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${delete_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:11:25.303" level="INFO">Clicking element '//lyte-menu-item[text()='Delete']'.</msg>
+<status status="PASS" starttime="20250212 16:11:25.301" endtime="20250212 16:11:25.605"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${accept_loc}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:11:25.605" endtime="20250212 16:11:25.942"/>
+</kw>
+<if>
+<branch type="IF" condition="'${setting}'=='Accept'">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${accept_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:11:25.944" level="INFO">Clicking element '//button[@type='accept']'.</msg>
+<status status="PASS" starttime="20250212 16:11:25.943" endtime="20250212 16:11:26.054"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
+<arg>${leadname}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" starttime="20250212 16:11:26.054" endtime="20250212 16:11:27.491"/>
+</kw>
+<status status="PASS" starttime="20250212 16:11:25.943" endtime="20250212 16:11:27.491"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${reject_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250212 16:11:27.492" endtime="20250212 16:11:27.492"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${leadname}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20250212 16:11:27.492" endtime="20250212 16:11:27.492"/>
+</kw>
+<status status="NOT RUN" starttime="20250212 16:11:27.491" endtime="20250212 16:11:27.492"/>
+</branch>
+<status status="PASS" starttime="20250212 16:11:25.943" endtime="20250212 16:11:27.492"/>
+</if>
+<status status="PASS" starttime="20250212 16:11:17.093" endtime="20250212 16:11:27.492"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20250212 16:11:27.493" endtime="20250212 16:11:34.196"/>
+</kw>
+<doc>Verify if user is able to delete an existing lead</doc>
+<tag>deletelead_tc01</tag>
+<status status="PASS" starttime="20250212 16:10:23.253" endtime="20250212 16:11:34.197"/>
+</test>
+<test id="s1-s1-s2-t2" name="Verify lead is not deleted if user cancels" line="19">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Zoho CRM</arg>
+<arg>AND</arg>
+<arg>Login to Zoho CRM</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>AND</arg>
+<arg>Navigate to leads section</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Zoho CRM" library="common">
+<doc>Open Zoho CRM in the browser and wait for the login page to load</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${zohourl}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250212 16:11:34.203" level="INFO">Opening browser 'Chrome' to base url 'https://accounts.zoho.in/signin?servicename=ZohoHome&amp;signupurl=https://www.zoho.com/signup.html'.</msg>
+<status status="PASS" starttime="20250212 16:11:34.202" endtime="20250212 16:11:36.550"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250212 16:11:36.550" endtime="20250212 16:11:36.602"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${signin_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signin_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:11:36.603" level="INFO">Clicking element '//div[@class='signin_head']//span[@id='headtitle' and text()='Sign in']'.</msg>
+<msg timestamp="20250212 16:11:36.822" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:11:36.822" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6C01202F5+28725]
+	(No symbol) [0x00007FF6C0082AE0]
+	(No symbol) [0x00007FF6BFF14F39]
+	(No symbol) [0x00007FF6BFF6A7D4]
+	(No symbol) [0x00007FF6BFF5C6B4]
+	(No symbol) [0x00007FF6BFF8FFAA]
+	(No symbol) [0x00007FF6BFF5BF86]
+	(No symbol) [0x00007FF6BFF901C0]
+	(No symbol) [0x00007FF6BFFB0181]
+	(No symbol) [0x00007FF6BFF8FD53]
+	(No symbol) [0x00007FF6BFF5A0E3]
+	(No symbol) [0x00007FF6BFF5B471]
+	GetHandleVerifier [0x00007FF6C044F30D+3366989]
+	GetHandleVerifier [0x00007FF6C04612F0+3440688]
+	GetHandleVerifier [0x00007FF6C04578FD+3401277]
+	GetHandleVerifier [0x00007FF6C01EAAAB+858091]
+	(No symbol) [0x00007FF6C008E74F]
+	(No symbol) [0x00007FF6C008A304]
+	(No symbol) [0x00007FF6C008A49D]
+	(No symbol) [0x00007FF6C0078B69]
+	BaseThreadInitThunk [0x00007FFA06F97374+20]
+	RtlUserThreadStart [0x00007FFA08B3CC91+33]
+</msg>
+<status status="FAIL" starttime="20250212 16:11:36.603" endtime="20250212 16:11:36.824"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signin_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:11:51.836" level="INFO">Clicking element '//div[@class='signin_head']//span[@id='headtitle' and text()='Sign in']'.</msg>
+<status status="PASS" starttime="20250212 16:11:51.832" endtime="20250212 16:11:52.003"/>
+</kw>
+<status status="PASS" starttime="20250212 16:11:36.602" endtime="20250212 16:11:52.003"/>
+</kw>
+<status status="PASS" starttime="20250212 16:11:34.201" endtime="20250212 16:11:52.004"/>
+</kw>
+<kw name="Login to Zoho CRM" library="common">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Login to Zoho CRM with the given username and password</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${googlesign_loc}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250212 16:11:52.004" endtime="20250212 16:11:52.016"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_loc}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:11:52.017" level="INFO">Typing text 'zohotest1102@gmail.com' into text field '//input[@id='login_id']'.</msg>
+<status status="PASS" starttime="20250212 16:11:52.016" endtime="20250212 16:11:52.229"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nextbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:11:52.230" level="INFO">Clicking element '//button[@id='nextbtn']'.</msg>
+<status status="PASS" starttime="20250212 16:11:52.229" endtime="20250212 16:11:52.354"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password_loc}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:11:52.355" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg timestamp="20250212 16:11:52.446" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20250212 16:11:52.504" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20250212 16:11:52.354" endtime="20250212 16:11:52.504"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nextbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:11:52.505" level="INFO">Clicking element '//button[@id='nextbtn']'.</msg>
+<status status="PASS" starttime="20250212 16:11:52.505" endtime="20250212 16:11:52.638"/>
+</kw>
+<status status="PASS" starttime="20250212 16:11:52.004" endtime="20250212 16:11:52.638"/>
+</kw>
+<kw name="Navigate to leads section" library="common">
+<doc>Navigate to the leads section and wait for the page to load</doc>
+<kw name="Get Current Date" library="DateTime">
+<var>${Date}</var>
+<arg>result_format=%Y%m%d%H%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20250212 16:11:52.638" level="INFO">${Date} = 202502121611</msg>
+<status status="PASS" starttime="20250212 16:11:52.638" endtime="20250212 16:11:52.639"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${Date}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250212 16:11:52.639" level="INFO">${Date} = 202502121611</msg>
+<status status="PASS" starttime="20250212 16:11:52.639" endtime="20250212 16:11:52.639"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${crmsec_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${crmsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:11:52.640" level="INFO">Clicking element '//div[text()='CRM']'.</msg>
+<msg timestamp="20250212 16:11:53.491" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:11:53.492" level="FAIL">Element with locator '//div[text()='CRM']' not found.</msg>
+<status status="FAIL" starttime="20250212 16:11:52.640" endtime="20250212 16:11:53.493"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${crmsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:12:08.502" level="INFO">Clicking element '//div[text()='CRM']'.</msg>
+<status status="PASS" starttime="20250212 16:12:08.500" endtime="20250212 16:12:12.499"/>
+</kw>
+<status status="PASS" starttime="20250212 16:11:52.639" endtime="20250212 16:12:12.499"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${leads_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leads_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:12:12.501" level="INFO">Clicking element '//a//span[text()='Leads']'.</msg>
+<status status="PASS" starttime="20250212 16:12:12.500" endtime="20250212 16:12:12.953"/>
+</kw>
+<status status="PASS" starttime="20250212 16:12:12.499" endtime="20250212 16:12:12.954"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${totalrecrds_loc}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:12:12.954" endtime="20250212 16:12:15.408"/>
+</kw>
+<status status="PASS" starttime="20250212 16:11:52.638" endtime="20250212 16:12:15.408"/>
+</kw>
+<status status="PASS" starttime="20250212 16:11:34.201" endtime="20250212 16:12:15.408"/>
+</kw>
+<kw name="Verify if lead deletion" library="lead">
+<arg>${Reject}</arg>
+<doc>Verify if lead is deleted</doc>
+<kw name="Click on existing lead" library="lead">
+<doc>Click on an existing lead</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leadtable_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:12:15.411" level="INFO">Clicking element '//lyte-yield[@yield-name='body-lookup']//a'.</msg>
+<status status="PASS" starttime="20250212 16:12:15.410" endtime="20250212 16:12:15.778"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${leadedit_loc}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250212 16:12:15.779" endtime="20250212 16:12:17.534"/>
+</kw>
+<status status="PASS" starttime="20250212 16:12:15.409" endtime="20250212 16:12:17.534"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${leadname}</var>
+<arg>${existingleadnm_loc}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:12:17.688" level="INFO">${leadname} = lastname202502112244</msg>
+<status status="PASS" starttime="20250212 16:12:17.534" endtime="20250212 16:12:17.688"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${moreoptions_loc}</arg>
+<arg>timeout=15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:12:17.688" endtime="20250212 16:12:17.730"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${moreoptions_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:12:17.731" level="INFO">Clicking element '//button[@aria-label='More Options']'.</msg>
+<status status="PASS" starttime="20250212 16:12:17.730" endtime="20250212 16:12:18.021"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250212 16:12:23.029" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250212 16:12:18.021" endtime="20250212 16:12:23.030"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${delete_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:12:23.033" level="INFO">Clicking element '//lyte-menu-item[text()='Delete']'.</msg>
+<status status="PASS" starttime="20250212 16:12:23.030" endtime="20250212 16:12:23.363"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${accept_loc}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:12:23.363" endtime="20250212 16:12:23.674"/>
+</kw>
+<if>
+<branch type="IF" condition="'${setting}'=='Accept'">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${accept_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250212 16:12:23.675" endtime="20250212 16:12:23.675"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
+<arg>${leadname}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="NOT RUN" starttime="20250212 16:12:23.675" endtime="20250212 16:12:23.675"/>
+</kw>
+<status status="NOT RUN" starttime="20250212 16:12:23.675" endtime="20250212 16:12:23.675"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${reject_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:12:23.676" level="INFO">Clicking element '//button[@type='reject']'.</msg>
+<status status="PASS" starttime="20250212 16:12:23.675" endtime="20250212 16:12:23.778"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${leadname}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20250212 16:12:23.808" level="INFO">Current page contains text 'lastname202502112244'.</msg>
+<status status="PASS" starttime="20250212 16:12:23.778" endtime="20250212 16:12:23.808"/>
+</kw>
+<status status="PASS" starttime="20250212 16:12:23.675" endtime="20250212 16:12:23.808"/>
+</branch>
+<status status="PASS" starttime="20250212 16:12:23.674" endtime="20250212 16:12:23.808"/>
+</if>
+<status status="PASS" starttime="20250212 16:12:15.409" endtime="20250212 16:12:23.809"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20250212 16:12:23.810" endtime="20250212 16:12:30.389"/>
+</kw>
+<doc>Verify if lead is not deleted if user cancels</doc>
+<tag>deletelead_tc02</tag>
+<status status="PASS" starttime="20250212 16:11:34.200" endtime="20250212 16:12:30.390"/>
+</test>
+<status status="PASS" starttime="20250212 16:10:23.192" endtime="20250212 16:12:30.391"/>
+</suite>
+<suite id="s1-s1-s3" name="Editlead" source="E:\Automation\Zoho_TestAutomation\Testcases\editlead.robot">
+<test id="s1-s1-s3-t1" name="Verify User is able to edit lead details successfully" line="13">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Zoho CRM</arg>
+<arg>AND</arg>
+<arg>Login to Zoho CRM</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>AND</arg>
+<arg>Navigate to leads section</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Zoho CRM" library="common">
+<doc>Open Zoho CRM in the browser and wait for the login page to load</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${zohourl}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250212 16:12:30.422" level="INFO">Opening browser 'Chrome' to base url 'https://accounts.zoho.in/signin?servicename=ZohoHome&amp;signupurl=https://www.zoho.com/signup.html'.</msg>
+<status status="PASS" starttime="20250212 16:12:30.421" endtime="20250212 16:12:32.697"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250212 16:12:32.697" endtime="20250212 16:12:32.731"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${signin_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signin_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:12:32.732" level="INFO">Clicking element '//div[@class='signin_head']//span[@id='headtitle' and text()='Sign in']'.</msg>
+<msg timestamp="20250212 16:12:32.925" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:12:32.925" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6C01202F5+28725]
+	(No symbol) [0x00007FF6C0082AE0]
+	(No symbol) [0x00007FF6BFF14F39]
+	(No symbol) [0x00007FF6BFF6A7D4]
+	(No symbol) [0x00007FF6BFF5C6B4]
+	(No symbol) [0x00007FF6BFF8FFAA]
+	(No symbol) [0x00007FF6BFF5BF86]
+	(No symbol) [0x00007FF6BFF901C0]
+	(No symbol) [0x00007FF6BFFB0181]
+	(No symbol) [0x00007FF6BFF8FD53]
+	(No symbol) [0x00007FF6BFF5A0E3]
+	(No symbol) [0x00007FF6BFF5B471]
+	GetHandleVerifier [0x00007FF6C044F30D+3366989]
+	GetHandleVerifier [0x00007FF6C04612F0+3440688]
+	GetHandleVerifier [0x00007FF6C04578FD+3401277]
+	GetHandleVerifier [0x00007FF6C01EAAAB+858091]
+	(No symbol) [0x00007FF6C008E74F]
+	(No symbol) [0x00007FF6C008A304]
+	(No symbol) [0x00007FF6C008A49D]
+	(No symbol) [0x00007FF6C0078B69]
+	BaseThreadInitThunk [0x00007FFA06F97374+20]
+	RtlUserThreadStart [0x00007FFA08B3CC91+33]
+</msg>
+<status status="FAIL" starttime="20250212 16:12:32.732" endtime="20250212 16:12:32.926"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signin_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:12:47.934" level="INFO">Clicking element '//div[@class='signin_head']//span[@id='headtitle' and text()='Sign in']'.</msg>
+<status status="PASS" starttime="20250212 16:12:47.932" endtime="20250212 16:12:48.028"/>
+</kw>
+<status status="PASS" starttime="20250212 16:12:32.731" endtime="20250212 16:12:48.028"/>
+</kw>
+<status status="PASS" starttime="20250212 16:12:30.421" endtime="20250212 16:12:48.028"/>
+</kw>
+<kw name="Login to Zoho CRM" library="common">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Login to Zoho CRM with the given username and password</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${googlesign_loc}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250212 16:12:48.029" endtime="20250212 16:12:48.042"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_loc}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:12:48.043" level="INFO">Typing text 'zohotest1102@gmail.com' into text field '//input[@id='login_id']'.</msg>
+<status status="PASS" starttime="20250212 16:12:48.042" endtime="20250212 16:12:48.258"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nextbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:12:48.259" level="INFO">Clicking element '//button[@id='nextbtn']'.</msg>
+<status status="PASS" starttime="20250212 16:12:48.258" endtime="20250212 16:12:48.384"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password_loc}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:12:48.385" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg timestamp="20250212 16:12:48.497" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20250212 16:12:48.550" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20250212 16:12:48.384" endtime="20250212 16:12:48.550"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nextbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:12:48.551" level="INFO">Clicking element '//button[@id='nextbtn']'.</msg>
+<status status="PASS" starttime="20250212 16:12:48.550" endtime="20250212 16:12:48.677"/>
+</kw>
+<status status="PASS" starttime="20250212 16:12:48.029" endtime="20250212 16:12:48.677"/>
+</kw>
+<kw name="Navigate to leads section" library="common">
+<doc>Navigate to the leads section and wait for the page to load</doc>
+<kw name="Get Current Date" library="DateTime">
+<var>${Date}</var>
+<arg>result_format=%Y%m%d%H%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20250212 16:12:48.678" level="INFO">${Date} = 202502121612</msg>
+<status status="PASS" starttime="20250212 16:12:48.678" endtime="20250212 16:12:48.678"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${Date}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250212 16:12:48.679" level="INFO">${Date} = 202502121612</msg>
+<status status="PASS" starttime="20250212 16:12:48.678" endtime="20250212 16:12:48.679"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${crmsec_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${crmsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:12:48.680" level="INFO">Clicking element '//div[text()='CRM']'.</msg>
+<msg timestamp="20250212 16:12:49.472" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:12:49.473" level="FAIL">Element with locator '//div[text()='CRM']' not found.</msg>
+<status status="FAIL" starttime="20250212 16:12:48.679" endtime="20250212 16:12:49.474"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${crmsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:13:04.487" level="INFO">Clicking element '//div[text()='CRM']'.</msg>
+<status status="PASS" starttime="20250212 16:13:04.485" endtime="20250212 16:13:08.859"/>
+</kw>
+<status status="PASS" starttime="20250212 16:12:48.679" endtime="20250212 16:13:08.859"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${leads_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leads_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:13:08.861" level="INFO">Clicking element '//a//span[text()='Leads']'.</msg>
+<status status="PASS" starttime="20250212 16:13:08.860" endtime="20250212 16:13:09.260"/>
+</kw>
+<status status="PASS" starttime="20250212 16:13:08.860" endtime="20250212 16:13:09.260"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${totalrecrds_loc}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:13:09.261" endtime="20250212 16:13:11.801"/>
+</kw>
+<status status="PASS" starttime="20250212 16:12:48.677" endtime="20250212 16:13:11.801"/>
+</kw>
+<status status="PASS" starttime="20250212 16:12:30.420" endtime="20250212 16:13:11.801"/>
+</kw>
+<kw name="Click on existing lead" library="lead">
+<doc>Click on an existing lead</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leadtable_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:13:11.803" level="INFO">Clicking element '//lyte-yield[@yield-name='body-lookup']//a'.</msg>
+<status status="PASS" starttime="20250212 16:13:11.802" endtime="20250212 16:13:12.174"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${leadedit_loc}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250212 16:13:12.174" endtime="20250212 16:13:14.296"/>
+</kw>
+<status status="PASS" starttime="20250212 16:13:11.802" endtime="20250212 16:13:14.296"/>
+</kw>
+<kw name="Edit Lead" library="lead">
+<doc>Edit the lead</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leadedit_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:13:14.298" level="INFO">Clicking element '//button[@aria-label='Edit']'.</msg>
+<status status="PASS" starttime="20250212 16:13:14.297" endtime="20250212 16:13:14.518"/>
+</kw>
+<status status="PASS" starttime="20250212 16:13:14.297" endtime="20250212 16:13:14.518"/>
+</kw>
+<kw name="Edit Company name of the lead" library="lead">
+<arg>${Save}</arg>
+<doc>Edit the company name of the lead</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${companynameedit_loc}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:13:14.520" endtime="20250212 16:13:16.369"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${companynameedit_loc}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20250212 16:13:16.369" endtime="20250212 16:13:16.448"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${companynameedit_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:13:16.448" level="INFO">Clicking element '//input[@id='inputId']'.</msg>
+<status status="PASS" starttime="20250212 16:13:16.448" endtime="20250212 16:13:16.549"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${companynameedit_loc}</arg>
+<arg>NewCompany${Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:13:16.550" level="INFO">Typing text 'NewCompany202502121612' into text field '//input[@id='inputId']'.</msg>
+<status status="PASS" starttime="20250212 16:13:16.550" endtime="20250212 16:13:16.884"/>
+</kw>
+<if>
+<branch type="IF" condition="'${setting}'=='Save'">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${saveleadbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:13:16.885" level="INFO">Clicking element '//button[@id='crm_create_savebutn']'.</msg>
+<status status="PASS" starttime="20250212 16:13:16.884" endtime="20250212 16:13:16.985"/>
+</kw>
+<status status="PASS" starttime="20250212 16:13:16.884" endtime="20250212 16:13:16.985"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${cancelbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250212 16:13:16.986" endtime="20250212 16:13:16.986"/>
+</kw>
+<status status="NOT RUN" starttime="20250212 16:13:16.985" endtime="20250212 16:13:16.986"/>
+</branch>
+<status status="PASS" starttime="20250212 16:13:16.884" endtime="20250212 16:13:16.986"/>
+</if>
+<status status="PASS" starttime="20250212 16:13:14.519" endtime="20250212 16:13:16.986"/>
+</kw>
+<kw name="Validate lead is edited successfully" library="lead">
+<doc>Validate if the lead is edited successfully</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>NewCompany${Date}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20250212 16:13:16.987" endtime="20250212 16:13:18.049"/>
+</kw>
+<status status="PASS" starttime="20250212 16:13:16.986" endtime="20250212 16:13:18.049"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20250212 16:13:18.050" endtime="20250212 16:13:24.699"/>
+</kw>
+<doc>Verify if user is able to edit lead details successfully</doc>
+<tag>editlead_tc_01</tag>
+<status status="PASS" starttime="20250212 16:12:30.420" endtime="20250212 16:13:24.700"/>
+</test>
+<test id="s1-s1-s3-t2" name="Verify lead is not edited if user cancels the edit" line="22">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Zoho CRM</arg>
+<arg>AND</arg>
+<arg>Login to Zoho CRM</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>AND</arg>
+<arg>Navigate to leads section</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Zoho CRM" library="common">
+<doc>Open Zoho CRM in the browser and wait for the login page to load</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${zohourl}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250212 16:13:24.708" level="INFO">Opening browser 'Chrome' to base url 'https://accounts.zoho.in/signin?servicename=ZohoHome&amp;signupurl=https://www.zoho.com/signup.html'.</msg>
+<status status="PASS" starttime="20250212 16:13:24.707" endtime="20250212 16:13:27.628"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250212 16:13:27.628" endtime="20250212 16:13:27.662"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${signin_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signin_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:13:27.664" level="INFO">Clicking element '//div[@class='signin_head']//span[@id='headtitle' and text()='Sign in']'.</msg>
+<msg timestamp="20250212 16:13:27.889" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:13:27.890" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6C01202F5+28725]
+	(No symbol) [0x00007FF6C0082AE0]
+	(No symbol) [0x00007FF6BFF14F39]
+	(No symbol) [0x00007FF6BFF6A7D4]
+	(No symbol) [0x00007FF6BFF5C6B4]
+	(No symbol) [0x00007FF6BFF8FFAA]
+	(No symbol) [0x00007FF6BFF5BF86]
+	(No symbol) [0x00007FF6BFF901C0]
+	(No symbol) [0x00007FF6BFFB0181]
+	(No symbol) [0x00007FF6BFF8FD53]
+	(No symbol) [0x00007FF6BFF5A0E3]
+	(No symbol) [0x00007FF6BFF5B471]
+	GetHandleVerifier [0x00007FF6C044F30D+3366989]
+	GetHandleVerifier [0x00007FF6C04612F0+3440688]
+	GetHandleVerifier [0x00007FF6C04578FD+3401277]
+	GetHandleVerifier [0x00007FF6C01EAAAB+858091]
+	(No symbol) [0x00007FF6C008E74F]
+	(No symbol) [0x00007FF6C008A304]
+	(No symbol) [0x00007FF6C008A49D]
+	(No symbol) [0x00007FF6C0078B69]
+	BaseThreadInitThunk [0x00007FFA06F97374+20]
+	RtlUserThreadStart [0x00007FFA08B3CC91+33]
+</msg>
+<status status="FAIL" starttime="20250212 16:13:27.663" endtime="20250212 16:13:27.890"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signin_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:13:42.909" level="INFO">Clicking element '//div[@class='signin_head']//span[@id='headtitle' and text()='Sign in']'.</msg>
+<status status="PASS" starttime="20250212 16:13:42.906" endtime="20250212 16:13:43.125"/>
+</kw>
+<status status="PASS" starttime="20250212 16:13:27.662" endtime="20250212 16:13:43.125"/>
+</kw>
+<status status="PASS" starttime="20250212 16:13:24.706" endtime="20250212 16:13:43.126"/>
+</kw>
+<kw name="Login to Zoho CRM" library="common">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Login to Zoho CRM with the given username and password</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${googlesign_loc}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250212 16:13:43.127" endtime="20250212 16:13:43.156"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_loc}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:13:43.156" level="INFO">Typing text 'zohotest1102@gmail.com' into text field '//input[@id='login_id']'.</msg>
+<status status="PASS" starttime="20250212 16:13:43.156" endtime="20250212 16:13:43.349"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nextbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:13:43.351" level="INFO">Clicking element '//button[@id='nextbtn']'.</msg>
+<status status="PASS" starttime="20250212 16:13:43.349" endtime="20250212 16:13:43.471"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password_loc}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:13:43.472" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg timestamp="20250212 16:13:43.564" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20250212 16:13:43.624" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20250212 16:13:43.471" endtime="20250212 16:13:43.624"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nextbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:13:43.624" level="INFO">Clicking element '//button[@id='nextbtn']'.</msg>
+<status status="PASS" starttime="20250212 16:13:43.624" endtime="20250212 16:13:43.740"/>
+</kw>
+<status status="PASS" starttime="20250212 16:13:43.126" endtime="20250212 16:13:43.741"/>
+</kw>
+<kw name="Navigate to leads section" library="common">
+<doc>Navigate to the leads section and wait for the page to load</doc>
+<kw name="Get Current Date" library="DateTime">
+<var>${Date}</var>
+<arg>result_format=%Y%m%d%H%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20250212 16:13:43.741" level="INFO">${Date} = 202502121613</msg>
+<status status="PASS" starttime="20250212 16:13:43.741" endtime="20250212 16:13:43.742"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${Date}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250212 16:13:43.742" level="INFO">${Date} = 202502121613</msg>
+<status status="PASS" starttime="20250212 16:13:43.742" endtime="20250212 16:13:43.742"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${crmsec_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${crmsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:13:43.743" level="INFO">Clicking element '//div[text()='CRM']'.</msg>
+<msg timestamp="20250212 16:13:43.926" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:13:43.926" level="FAIL">Element with locator '//div[text()='CRM']' not found.</msg>
+<status status="FAIL" starttime="20250212 16:13:43.743" endtime="20250212 16:13:43.927"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${crmsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:13:58.936" level="INFO">Clicking element '//div[text()='CRM']'.</msg>
+<status status="PASS" starttime="20250212 16:13:58.934" endtime="20250212 16:14:00.476"/>
+</kw>
+<status status="PASS" starttime="20250212 16:13:43.742" endtime="20250212 16:14:00.476"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${leads_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leads_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:14:00.478" level="INFO">Clicking element '//a//span[text()='Leads']'.</msg>
+<msg timestamp="20250212 16:14:02.195" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:14:02.195" level="FAIL">Element with locator '//a//span[text()='Leads']' not found.</msg>
+<status status="FAIL" starttime="20250212 16:14:00.477" endtime="20250212 16:14:02.196"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leads_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:14:17.202" level="INFO">Clicking element '//a//span[text()='Leads']'.</msg>
+<status status="PASS" starttime="20250212 16:14:17.200" endtime="20250212 16:14:17.514"/>
+</kw>
+<status status="PASS" starttime="20250212 16:14:00.476" endtime="20250212 16:14:17.514"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${totalrecrds_loc}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:14:17.515" endtime="20250212 16:14:19.817"/>
+</kw>
+<status status="PASS" starttime="20250212 16:13:43.741" endtime="20250212 16:14:19.818"/>
+</kw>
+<status status="PASS" starttime="20250212 16:13:24.706" endtime="20250212 16:14:19.818"/>
+</kw>
+<kw name="Click on existing lead" library="lead">
+<doc>Click on an existing lead</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leadtable_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:14:19.819" level="INFO">Clicking element '//lyte-yield[@yield-name='body-lookup']//a'.</msg>
+<status status="PASS" starttime="20250212 16:14:19.819" endtime="20250212 16:14:20.151"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${leadedit_loc}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250212 16:14:20.152" endtime="20250212 16:14:21.984"/>
+</kw>
+<status status="PASS" starttime="20250212 16:14:19.818" endtime="20250212 16:14:21.985"/>
+</kw>
+<kw name="Edit Lead" library="lead">
+<doc>Edit the lead</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leadedit_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:14:21.987" level="INFO">Clicking element '//button[@aria-label='Edit']'.</msg>
+<status status="PASS" starttime="20250212 16:14:21.986" endtime="20250212 16:14:22.195"/>
+</kw>
+<status status="PASS" starttime="20250212 16:14:21.985" endtime="20250212 16:14:22.195"/>
+</kw>
+<kw name="Edit Company name of the lead" library="lead">
+<arg>${Cancel}</arg>
+<doc>Edit the company name of the lead</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${companynameedit_loc}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:14:22.197" endtime="20250212 16:14:23.938"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${companynameedit_loc}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20250212 16:14:23.938" endtime="20250212 16:14:24.039"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${companynameedit_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:14:24.040" level="INFO">Clicking element '//input[@id='inputId']'.</msg>
+<status status="PASS" starttime="20250212 16:14:24.039" endtime="20250212 16:14:24.134"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${companynameedit_loc}</arg>
+<arg>NewCompany${Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:14:24.135" level="INFO">Typing text 'NewCompany202502121613' into text field '//input[@id='inputId']'.</msg>
+<status status="PASS" starttime="20250212 16:14:24.134" endtime="20250212 16:14:24.474"/>
+</kw>
+<if>
+<branch type="IF" condition="'${setting}'=='Save'">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${saveleadbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250212 16:14:24.474" endtime="20250212 16:14:24.475"/>
+</kw>
+<status status="NOT RUN" starttime="20250212 16:14:24.474" endtime="20250212 16:14:24.475"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${cancelbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:14:24.475" level="INFO">Clicking element '//button[@id='crm_create_cancelbutn']'.</msg>
+<status status="PASS" starttime="20250212 16:14:24.475" endtime="20250212 16:14:24.569"/>
+</kw>
+<status status="PASS" starttime="20250212 16:14:24.475" endtime="20250212 16:14:24.569"/>
+</branch>
+<status status="PASS" starttime="20250212 16:14:24.474" endtime="20250212 16:14:24.569"/>
+</if>
+<status status="PASS" starttime="20250212 16:14:22.196" endtime="20250212 16:14:24.569"/>
+</kw>
+<kw name="Validate lead not is edited" library="lead">
+<doc>Validate if the lead is not edited</doc>
+<kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
+<arg>NewCompany${Date}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" starttime="20250212 16:14:24.570" endtime="20250212 16:14:24.659"/>
+</kw>
+<status status="PASS" starttime="20250212 16:14:24.569" endtime="20250212 16:14:24.659"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20250212 16:14:24.660" endtime="20250212 16:14:31.325"/>
+</kw>
+<doc>Verify if lead is not edited if user cancels the edit</doc>
+<tag>editlead_tc_02</tag>
+<status status="PASS" starttime="20250212 16:13:24.704" endtime="20250212 16:14:31.326"/>
+</test>
+<status status="PASS" starttime="20250212 16:12:30.393" endtime="20250212 16:14:31.329"/>
+</suite>
+<suite id="s1-s1-s4" name="Filterlead" source="E:\Automation\Zoho_TestAutomation\Testcases\filterlead.robot">
+<test id="s1-s1-s4-t1" name="Verify user is able to filter bases on Lead Name" line="12">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Zoho CRM</arg>
+<arg>AND</arg>
+<arg>Login to Zoho CRM</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>AND</arg>
+<arg>Navigate to leads section</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Zoho CRM" library="common">
+<doc>Open Zoho CRM in the browser and wait for the login page to load</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${zohourl}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250212 16:14:31.361" level="INFO">Opening browser 'Chrome' to base url 'https://accounts.zoho.in/signin?servicename=ZohoHome&amp;signupurl=https://www.zoho.com/signup.html'.</msg>
+<status status="PASS" starttime="20250212 16:14:31.360" endtime="20250212 16:14:33.900"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250212 16:14:33.901" endtime="20250212 16:14:33.940"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${signin_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signin_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:14:33.942" level="INFO">Clicking element '//div[@class='signin_head']//span[@id='headtitle' and text()='Sign in']'.</msg>
+<msg timestamp="20250212 16:14:34.172" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:14:34.173" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6C01202F5+28725]
+	(No symbol) [0x00007FF6C0082AE0]
+	(No symbol) [0x00007FF6BFF14F39]
+	(No symbol) [0x00007FF6BFF6A7D4]
+	(No symbol) [0x00007FF6BFF5C6B4]
+	(No symbol) [0x00007FF6BFF8FFAA]
+	(No symbol) [0x00007FF6BFF5BF86]
+	(No symbol) [0x00007FF6BFF901C0]
+	(No symbol) [0x00007FF6BFFB0181]
+	(No symbol) [0x00007FF6BFF8FD53]
+	(No symbol) [0x00007FF6BFF5A0E3]
+	(No symbol) [0x00007FF6BFF5B471]
+	GetHandleVerifier [0x00007FF6C044F30D+3366989]
+	GetHandleVerifier [0x00007FF6C04612F0+3440688]
+	GetHandleVerifier [0x00007FF6C04578FD+3401277]
+	GetHandleVerifier [0x00007FF6C01EAAAB+858091]
+	(No symbol) [0x00007FF6C008E74F]
+	(No symbol) [0x00007FF6C008A304]
+	(No symbol) [0x00007FF6C008A49D]
+	(No symbol) [0x00007FF6C0078B69]
+	BaseThreadInitThunk [0x00007FFA06F97374+20]
+	RtlUserThreadStart [0x00007FFA08B3CC91+33]
+</msg>
+<status status="FAIL" starttime="20250212 16:14:33.941" endtime="20250212 16:14:34.174"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${signin_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:14:49.187" level="INFO">Clicking element '//div[@class='signin_head']//span[@id='headtitle' and text()='Sign in']'.</msg>
+<status status="PASS" starttime="20250212 16:14:49.184" endtime="20250212 16:14:49.345"/>
+</kw>
+<status status="PASS" starttime="20250212 16:14:33.940" endtime="20250212 16:14:49.345"/>
+</kw>
+<status status="PASS" starttime="20250212 16:14:31.360" endtime="20250212 16:14:49.345"/>
+</kw>
+<kw name="Login to Zoho CRM" library="common">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Login to Zoho CRM with the given username and password</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${googlesign_loc}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250212 16:14:49.347" endtime="20250212 16:14:49.382"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_loc}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:14:49.384" level="INFO">Typing text 'zohotest1102@gmail.com' into text field '//input[@id='login_id']'.</msg>
+<status status="PASS" starttime="20250212 16:14:49.382" endtime="20250212 16:14:49.602"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nextbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:14:49.603" level="INFO">Clicking element '//button[@id='nextbtn']'.</msg>
+<status status="PASS" starttime="20250212 16:14:49.602" endtime="20250212 16:14:49.732"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password_loc}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20250212 16:14:49.733" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg timestamp="20250212 16:14:49.834" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20250212 16:14:49.896" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20250212 16:14:49.732" endtime="20250212 16:14:49.896"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nextbtn_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:14:49.897" level="INFO">Clicking element '//button[@id='nextbtn']'.</msg>
+<status status="PASS" starttime="20250212 16:14:49.896" endtime="20250212 16:14:50.034"/>
+</kw>
+<status status="PASS" starttime="20250212 16:14:49.346" endtime="20250212 16:14:50.035"/>
+</kw>
+<kw name="Navigate to leads section" library="common">
+<doc>Navigate to the leads section and wait for the page to load</doc>
+<kw name="Get Current Date" library="DateTime">
+<var>${Date}</var>
+<arg>result_format=%Y%m%d%H%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20250212 16:14:50.036" level="INFO">${Date} = 202502121614</msg>
+<status status="PASS" starttime="20250212 16:14:50.036" endtime="20250212 16:14:50.036"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${Date}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20250212 16:14:50.036" level="INFO">${Date} = 202502121614</msg>
+<status status="PASS" starttime="20250212 16:14:50.036" endtime="20250212 16:14:50.037"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${crmsec_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${crmsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:14:50.037" level="INFO">Clicking element '//div[text()='CRM']'.</msg>
+<msg timestamp="20250212 16:14:50.894" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250212 16:14:50.895" level="FAIL">Element with locator '//div[text()='CRM']' not found.</msg>
+<status status="FAIL" starttime="20250212 16:14:50.037" endtime="20250212 16:14:50.896"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${crmsec_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:15:05.908" level="INFO">Clicking element '//div[text()='CRM']'.</msg>
+<status status="PASS" starttime="20250212 16:15:05.907" endtime="20250212 16:15:10.166"/>
+</kw>
+<status status="PASS" starttime="20250212 16:14:50.037" endtime="20250212 16:15:10.166"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>3x</arg>
+<arg>15s</arg>
+<arg>Click Element</arg>
+<arg>${leads_loc}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${leads_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:15:10.168" level="INFO">Clicking element '//a//span[text()='Leads']'.</msg>
+<status status="PASS" starttime="20250212 16:15:10.167" endtime="20250212 16:15:10.551"/>
+</kw>
+<status status="PASS" starttime="20250212 16:15:10.167" endtime="20250212 16:15:10.551"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${totalrecrds_loc}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250212 16:15:10.551" endtime="20250212 16:15:13.048"/>
+</kw>
+<status status="PASS" starttime="20250212 16:14:50.035" endtime="20250212 16:15:13.048"/>
+</kw>
+<status status="PASS" starttime="20250212 16:14:31.360" endtime="20250212 16:15:13.048"/>
+</kw>
+<kw name="Filter leads based on name field" library="lead">
+<doc>Filter leads based on name field , for example 'C' pass the value in "searchtxt". It should return value starting with 'C'</doc>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{actuallist}</var>
+<arg>${leadbody_loc}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20250212 16:15:13.170" level="INFO">@{actuallist} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="da5ae8b186881961e42b994b5d5344cb", element="f.07F09DF0D1C2C104B13E5BD5AB65CCD6.d.E26981AD73FA8DCFA7A402DA5CD94BDD.e.10551")&gt; | &lt;selenium.we...</msg>
+<status status="PASS" starttime="20250212 16:15:13.049" endtime="20250212 16:15:13.170"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${search_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:15:13.171" level="INFO">Clicking element '//span[@id='alphaSearch']'.</msg>
+<status status="PASS" starttime="20250212 16:15:13.170" endtime="20250212 16:15:13.386"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250212 16:15:15.391" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250212 16:15:13.386" endtime="20250212 16:15:15.391"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${searchc_loc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:15:15.392" level="INFO">Clicking element '//lyte-menu-item[@id='C']'.</msg>
+<status status="PASS" starttime="20250212 16:15:15.391" endtime="20250212 16:15:15.585"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250212 16:15:20.590" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250212 16:15:15.586" endtime="20250212 16:15:20.590"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{filterlist}</var>
+<arg>${leadbody_loc}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20250212 16:15:20.617" level="INFO">@{filterlist} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="da5ae8b186881961e42b994b5d5344cb", element="f.07F09DF0D1C2C104B13E5BD5AB65CCD6.d.E26981AD73FA8DCFA7A402DA5CD94BDD.e.13599")&gt; | &lt;selenium.we...</msg>
+<status status="PASS" starttime="20250212 16:15:20.590" endtime="20250212 16:15:20.617"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{filterlist}</value>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="da5ae8b186881961e42b994b5d5344cb", element="f.07F09DF0D1C2C104B13E5BD5AB65CCD6.d.E26981AD73FA8DCFA7A402DA5CD94BDD.e.13599")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:15:20.641" level="INFO">${text} = Christopher Maclead (Sample)</msg>
+<status status="PASS" starttime="20250212 16:15:20.618" endtime="20250212 16:15:20.641"/>
+</kw>
+<kw name="Should Start With" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${searchtxt}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" starttime="20250212 16:15:20.642" endtime="20250212 16:15:20.642"/>
+</kw>
+<status status="PASS" starttime="20250212 16:15:20.618" endtime="20250212 16:15:20.642"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="da5ae8b186881961e42b994b5d5344cb", element="f.07F09DF0D1C2C104B13E5BD5AB65CCD6.d.E26981AD73FA8DCFA7A402DA5CD94BDD.e.13650")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:15:20.652" level="INFO">${text} = Carissa Kidman (Sample)</msg>
+<status status="PASS" starttime="20250212 16:15:20.642" endtime="20250212 16:15:20.652"/>
+</kw>
+<kw name="Should Start With" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${searchtxt}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" starttime="20250212 16:15:20.652" endtime="20250212 16:15:20.652"/>
+</kw>
+<status status="PASS" starttime="20250212 16:15:20.642" endtime="20250212 16:15:20.652"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="da5ae8b186881961e42b994b5d5344cb", element="f.07F09DF0D1C2C104B13E5BD5AB65CCD6.d.E26981AD73FA8DCFA7A402DA5CD94BDD.e.13701")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250212 16:15:20.662" level="INFO">${text} = Chau Kitzman (Sample)</msg>
+<status status="PASS" starttime="20250212 16:15:20.652" endtime="20250212 16:15:20.662"/>
+</kw>
+<kw name="Should Start With" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${searchtxt}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" starttime="20250212 16:15:20.662" endtime="20250212 16:15:20.663"/>
+</kw>
+<status status="PASS" starttime="20250212 16:15:20.652" endtime="20250212 16:15:20.663"/>
+</iter>
+<status status="PASS" starttime="20250212 16:15:20.617" endtime="20250212 16:15:20.663"/>
+</for>
+<status status="PASS" starttime="20250212 16:15:13.049" endtime="20250212 16:15:20.663"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20250212 16:15:20.663" endtime="20250212 16:15:23.089"/>
+</kw>
+<doc>Verify if user is able to filter leads based on specific fields like name staring with letter 'C' in this case</doc>
+<tag>filterlead_tc01</tag>
+<status status="PASS" starttime="20250212 16:14:31.359" endtime="20250212 16:15:23.090"/>
+</test>
+<status status="PASS" starttime="20250212 16:14:31.333" endtime="20250212 16:15:23.095"/>
+</suite>
+<status status="PASS" starttime="20250212 16:08:22.425" endtime="20250212 16:15:23.103"/>
+</suite>
+<status status="PASS" starttime="20250212 16:08:22.335" endtime="20250212 16:15:23.112"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">createlead_tc01</stat>
+<stat pass="1" fail="0" skip="0">createlead_tc02</stat>
+<stat pass="1" fail="0" skip="0">deletelead_tc01</stat>
+<stat pass="1" fail="0" skip="0">deletelead_tc02</stat>
+<stat pass="1" fail="0" skip="0">editlead_tc_01</stat>
+<stat pass="1" fail="0" skip="0">editlead_tc_02</stat>
+<stat pass="1" fail="0" skip="0">filterlead_tc01</stat>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="Zoho TestAutomation">Zoho TestAutomation</stat>
+<stat pass="7" fail="0" skip="0" id="s1-s1" name="Testcases">Zoho TestAutomation.Testcases</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="Createlead">Zoho TestAutomation.Testcases.Createlead</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s2" name="Deletelead">Zoho TestAutomation.Testcases.Deletelead</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s3" name="Editlead">Zoho TestAutomation.Testcases.Editlead</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s4" name="Filterlead">Zoho TestAutomation.Testcases.Filterlead</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
